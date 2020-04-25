@@ -33,3 +33,7 @@ messages:
   moved: "&aMoved you!"
   denied: "&4You are not allowed to join {server}!"
 ```
+
+
+#### Notes
+I just made this because I was bored and because I couldn't find anything that specificly does this.
