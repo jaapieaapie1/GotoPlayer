@@ -1,14 +1,14 @@
-#Goto Player
-####Find your friends easily in a bungeecord network
+# Goto Player
+#### Find your friends easily in a bungeecord network
 ___________
 
-####Commands:
+#### Commands:
  * /goto username
  
 moves a player to the same server as another player.
 
 
-####Permissions:
+#### Permissions:
  * goto.* : Allows a player to go to everyone
  * goto.username : Allows a player to go to a specific person
  * goto.group : Allows a player to go to every player within a bungeecord group (the groups are managed by the bungeecord config or by your permission plugin)
@@ -16,7 +16,7 @@ moves a player to the same server as another player.
 [spigot resource](https://www.spigotmc.org/resources/gotoplayer.77915/)
 
 
-####Config
+#### Config
 ```
 # Set permissions to true if you want the plugin to only work with permissions
 permissions: false
