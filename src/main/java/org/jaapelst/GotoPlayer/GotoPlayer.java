@@ -1,5 +1,6 @@
 package org.jaapelst.GotoPlayer;
 
+import de.simonsator.partyandfriends.api.pafplayers.PAFPlayerManager;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
@@ -11,17 +12,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 
+import de.simonsator.partyandfriends.main.Main;
+import org.jaapelst.GotoPlayer.api.tagManager;
+
 public class GotoPlayer extends Plugin {
 
     public Configuration config;
+    private tagManager tagmanager = new tagManager();
 
 
     @Override
     public void onEnable() {
 
+
+
         getLogger().info("Loaded GotoPlayer");
 
         getProxy().getPluginManager().registerCommand(this, new GotoCommand(this));
+
 
 
         if (!getDataFolder().exists())
@@ -44,6 +52,14 @@ public class GotoPlayer extends Plugin {
         }
     }
 
+
+    /**
+     * Get the tag manager
+     * @return tag manager
+     */
+    public tagManager getTagManager() {
+        return tagmanager;
+    }
 
 
 }

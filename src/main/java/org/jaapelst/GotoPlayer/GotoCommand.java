@@ -8,19 +8,21 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.connection.Server;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.TabExecutor;
+import org.jaapelst.GotoPlayer.api.tagManager;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class GotoCommand extends Command implements TabExecutor {
     private final GotoPlayer core;
-
+    private final tagManager tagmanager;
     public GotoCommand(GotoPlayer core) {
         super("goto");
         this.core = core;
-
+        this.tagmanager = core.getTagManager();
 
     }
 
@@ -31,6 +33,12 @@ public class GotoCommand extends Command implements TabExecutor {
         } else {
             ProxyServer proxy = core.getProxy();
             ProxiedPlayer player = proxy.getPlayer(strings[0]);
+            if(player == null) {
+                UUID uuid = this.tagmanager.getTag(strings[0]);
+                if(uuid != null) {
+                    player = this.core.getProxy().getPlayer(uuid);
+                }
+            }
 
             if(player == null) {
                 commandSender.sendMessage(new TextComponent(getMessage("not-online")));
