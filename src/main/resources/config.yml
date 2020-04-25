@@ -1,0 +1,14 @@
+# Set permissions to true if you want the plugin to only work with permissions
+permissions: false
+
+# Servers that no one is allowed to /goto to
+denied-servers:
+  - secretServer
+
+messages:
+  no-perms: "&4You don't have permissions to use this command!"
+  no-user: "&4Please state a username after the command!"
+  not-online: "&4That player is not online"
+  go-to-self: "&4Can't go to yourself"
+  moved: "&aMoved you!"
+  denied: "&4You are not allowed to join {server}!"
